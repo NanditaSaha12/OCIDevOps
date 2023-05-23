@@ -1,0 +1,15 @@
+version: 0.1
+component: command
+timeoutInSeconds: 6000
+shell: bash
+
+steps:
+  - type: Command
+    name: "Echo"
+    command: |
+          echo "INT DUMMY BUILD"
+    onFailure:
+      - type: Command
+        command: |
+          echo "Int activation failed"
+        timeoutInSeconds: 60
